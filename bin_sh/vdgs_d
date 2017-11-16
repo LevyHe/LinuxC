@@ -1,0 +1,85 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          Vdgs
+# Required-Start:    $remote_fs $time
+# Required-Stop:     umountnfs $time
+# X-Stop-After:      sendsigs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start the Advanced Configuration and Power Interface daemon
+# Description:      
+### END INIT INFO
+
+#umask 077			#设置缺省权限
+
+set -e				#执行结果不为true 退出脚本
+
+BIN_NAME=Vdgs
+VDGS_BIN=/usr/sbin/$BIN_NAME			#bin文件
+LOG4CRC=/usr/local/log4c/etc/log4crc	#log4crc配置文件
+VDGS_CONF=/opt/vdgs/etc/vdgs.cnf	#vdgs配置文件
+PIDFILE=/var/run/Vdgs.pid		#vdgs进程ID文件
+
+
+
+# Get lsb functions
+. /lib/lsb/init-functions
+
+
+# start function
+
+do_start(){
+	if ! [ -f $PIDFILE ] ; then
+		if  ! [ -x "$VDGS_BIN" ] ; then
+		echo "${VDGS_BIN} is not exist"
+		exit 0 ;
+		fi
+
+		if  ! [ -r "$LOG4CRC" ] ; then
+		echo "${LOG4CRC} is not exist"
+		exit 0 ;
+		fi
+
+		if  ! [ -r "$VDGS_CONF" ] ; then
+		echo "${VDGS_CONF} is not exist"
+		exit 0 ;
+		fi
+	fi
+	export PIDFILE=$PIDFILE
+	export CONFIG_FILE=$VDGS_CONF
+	start-stop-daemon --start --oknodo --pidfile $PIDFILE  --exec $VDGS_BIN 
+	log_end_msg $?	
+	
+}
+do_stop(){
+
+	log_daemon_msg "Stopping Vdgs service"
+	start-stop-daemon --stop --retry=QUIT/30/KILL/5 --oknodo --pidfile $PIDFILE --exec $VDGS_BIN 
+	log_end_msg $?
+	rm -f $PIDFILE
+}
+
+case "$1" in
+  start)
+ 	#if init_is_upstart; then;exit 1;fi
+	do_start
+    ;;
+  stop)
+ 	#if init_is_upstart; then;exit 0;fi
+	do_stop	
+	;;
+ restart|force-reload)
+	#if init_is_upstart; then;exit 1;fi
+	 do_stop
+	 do_start
+	;;
+  status)
+	status_of_proc -p $PIDFILE $VDGS_BIN $BIN_NAME && exit 0 || exit $?
+	;;
+  *)
+	echo "Usage: /etc/init.d/ {start|stop|rotate|restart|force-reload|status}" >&2
+	exit 3
+	;;
+esac
+
+:
