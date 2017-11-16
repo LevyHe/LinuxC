@@ -1,0 +1,7 @@
+[2017-04-01 19:28:58.896][INF] The COM:Core ver is 5.1.6.2, 2015_12_09. Async:1.
+[2017-04-01 19:28:58.896][INF] This hcnetsdk ver is 5.1.6.2 Ver 2015_12_09.
+[2017-04-01 19:28:58.897][INF] login dev 192.168.1.96:8080.
+[2017-04-01 19:29:02.412][ERR] Private connect 192.168.1.96:8080 sock=36 this=0x8771c014 cmd=0x10000 sys_err=110
+[2017-04-01 19:29:02.420][ERR] [192.168.1.96:8080]LogonDevice Link_CreateLink fail[7].
+[2017-04-01 19:29:13.927][ERR] CEzvizTrans::UnloadSSLLib failed
+[2017-04-01 19:29:13.927][INF] Libiconv, Lib Not Load.

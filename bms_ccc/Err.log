@@ -1,0 +1,8 @@
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_sql_open] [LINE:53]:数据库文件不存在
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_getjsonobject] [LINE:131]:get hy_bms_jsonparam.param_object error.
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_sql_open] [LINE:53]:数据库文件不存在
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_insertjsonobject] [LINE:168]:hy_bms_jsonparam replace error.
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_sql_open] [LINE:53]:数据库文件不存在
+2017-03-24 18:55:26.838 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_getjsonobject] [LINE:131]:get hy_bms_jsonparam.param_object error.
+2017-03-24 19:20:28.605 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_getjsonobject] [LINE:145]:hy_bms_jsonparam has no groupid 2
+2017-03-24 19:20:28.605 [ERROR] [BMS]-[../sqlite/sqlite_assist.c] [bms_sql_exec] [LINE:97]:数据库执行错误sql（replace into hy_bms_jsonparam values(2,'{"id":2,"volatge":0,"current":0,"temp":0,"res_elc":0,"total":0,"u":0}',datetime(CURRENT_TIMESTAMP,'localtime'));）：8,attempt to write a readonly database

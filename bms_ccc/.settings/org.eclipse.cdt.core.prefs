@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/BMS_CONFIG_FILE/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/BMS_CONFIG_FILE/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/BMS_CONFIG_FILE/value=/opt/bms/etc/bms.cnf
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/C_INCLUDE_PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/C_INCLUDE_PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/C_INCLUDE_PATH/value=
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/PWD/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/PWD/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/PWD/value=/home/levy/usr/bms_ccc/bms_ccc/Debug
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/append=true
+environment/project/cdt.managedbuild.config.gnu.exe.debug.601204228/appendContributed=true
