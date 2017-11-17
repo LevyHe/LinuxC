@@ -1,6 +1,6 @@
 #!/bin/bash
 ### BEGIN INIT INFO
-# Provides:          Vdgs
+# Provides:          test
 # Required-Start:    $remote_fs $time
 # Required-Stop:     umountnfs $time
 # X-Stop-After:      sendsigs
@@ -17,8 +17,8 @@ set -e				#执行结果不为true 退出脚本
 BIN_NAME=Vdgs
 VDGS_BIN=/usr/sbin/$BIN_NAME			#bin文件
 LOG4CRC=/usr/local/log4c/etc/log4crc	#log4crc配置文件
-VDGS_CONF=/opt/vdgs/etc/vdgs.cnf	#vdgs配置文件
-PIDFILE=/var/run/Vdgs.pid		#vdgs进程ID文件
+VDGS_CONF=/opt/test/etc/test.cnf	#配置文件
+PIDFILE=/var/run/test.pid		#进程ID文件
 
 
 
