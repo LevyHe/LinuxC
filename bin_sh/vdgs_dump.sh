@@ -3,14 +3,14 @@
 # Database info  
 #备份上个月1号之前的所有记录，并清空数据表中的内容
 
-CONF_FLIE="vdgs.cnf"
+CONF_FLIE="test.cnf"
 
 MYSQL="mysql"
 MYSQLDUMP="mysqldump"
 
-BCK_DIR="/opt/vdgs/vdgs_bckup"  
+BCK_DIR="/opt/test/test_bckup"  
 GZIP_DIR="$BCK_DIR/GzipFile"
-DUMP_DIR="$BCK_DIR/VdgsSqlDump"
+DUMP_DIR="$BCK_DIR/TestSqlDump"
 
 KEEP_FILE_NUM=4
 
@@ -55,13 +55,13 @@ test ! -d $DUMP_DIR && mkdir $DUMP_DIR
 DUMP_FILE="$DUMP_DIR/VDGS_$CURDATE.sql.gz"
 
 
-leadstate=$($MYSQL -u $db_user -h $db_host -p$db_passwd -D $db_database -P $db_port -e "select LeadState from HY_VDGS_LeadState limit 0,1;"|awk 'NR>1')
+leadstate=$($MYSQL -u $db_user -h $db_host -p$db_passwd -D $db_database -P $db_port -e "select LeadState from Test_LeadState limit 0,1;"|awk 'NR>1')
 
 while [ $leadstate -ne 0 ]
 do 
 	echo $leadstate
 	sleep 5
-	leadstate=$($MYSQL -u $db_user -h $db_host -p$db_passwd -D $db_database -P $db_port -e "select LeadState from HY_VDGS_LeadState limit 				0,1;"|awk 'NR>1')	
+	leadstate=$($MYSQL -u $db_user -h $db_host -p$db_passwd -D $db_database -P $db_port -e "select LeadState from Test_LeadState limit 				0,1;"|awk 'NR>1')	
 done
 
 
